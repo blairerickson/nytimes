@@ -31,6 +31,24 @@ url += '?' + $.param({
 });
 
 
+
+  // Start Year
+  startYear = $("#startYear").val().trim();
+
+  // End Year
+  endYear = $("#endYear").val().trim();
+
+  // If the user provides a startYear -- the startYear will be included in the queryURL
+  if (parseInt(startYear)) {
+    url = url + "&begin_date=" + startYear + "0101";
+  }
+
+  // If the user provides a startYear -- the endYear will be included in the queryURL
+  if (parseInt(endYear)) {
+    url = url + "&end_date=" + endYear + "0101";
+  }
+
+
 $.ajax({
   url: url,
   method: 'GET',
@@ -57,3 +75,12 @@ $("#wellSection").append('<h4>' + result.response.docs[i].snippet  + '</h4><br><
 
 
 }
+
+
+
+
+// This button clears the top articles section
+$("#clearAll").on("click", function() {
+  resultCount = 0;
+  $("#wellSection").empty();
+});
