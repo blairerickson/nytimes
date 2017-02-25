@@ -45,10 +45,9 @@ console.log(result.response.docs[0].web_url);
 
 for (var i = 0; i < resultCount; i++) {
 
-$("#wellSection").append('<h2>' + result.response.docs[i].headline.main + '</h2><br>');
-$("#wellSection").append(result.response.docs[i].web_url + '<br>');
+$("#wellSection").append('<h2> <a href="' +result.response.docs[i].web_url+'"">' + result.response.docs[i].headline.main + '</h2>');
 $("#wellSection").append(result.response.docs[i].type_of_material + '<br>');
-$("#wellSection").append('<i>' + result.response.docs[i].snippet  + '</i><br><div class="divider"></div><br>');
+$("#wellSection").append('<h4>' + result.response.docs[i].snippet  + '</h4><br><div class="divider"></div><br>');
 
 }
 
