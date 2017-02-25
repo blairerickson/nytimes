@@ -7,3 +7,7 @@ $("runSearch").on("click", function()
    });
 
 
+function getData()
+{
+	console.log("searched");
+}
